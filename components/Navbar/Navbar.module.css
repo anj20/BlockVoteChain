@@ -9,20 +9,48 @@
 .title {
   cursor: pointer;
 }
-.navbar_box {
-  width: 80%;
-  margin: 0 auto;
+.nav_list {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #fff;
+  padding: 0 2rem;
+}
+
+.nav_list h1 {
+  color: #fffff0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 5px 0px;
+  margin: 0px 30px;
+  transition: all 0.5 ease;
+}
+.nav_list h1:hover {
+  color: #228b22;
+}
+.nav_list p {
+  color: #228b22;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 5px 0px;
+  margin: 0px 30px;
+  transition: all 0.5 ease;
+}
+
+.navbar_box {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px;
+  transition: all 0.4s ease;
 }
 .connect {
-  background-color: #9a02ac;
   padding: 0.5rem 2rem;
-  border-radius: 0.2rem;
   cursor: pointer;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.35);
   position: relative;
 }
 
@@ -38,10 +66,13 @@
 }
 
 .connect button {
-  background-color: transparent;
-  border: 0;
+  background-color: #00cc66;
+  height: 5vh;
+  width: 12.5vw;
+  border-radius: 0.2rem;
   font-size: 1rem;
   color: #fff;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.35);
   font-weight: 600;
   cursor: pointer;
 }
@@ -56,6 +87,14 @@
   font-size: 2rem;
   margin-left: 1rem;
 }
+.hameburger {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+
 .message__box {
   top: 50%;
   left: 50%;
@@ -90,6 +129,12 @@
   background-color: #9a02ac;
   color: #231e39;
 }
+
+@media screen and (max-width: 1090px) {
+  .hameburger {
+    display: block;
+  }
+}
 @media screen and (max-width: 35em) {
   .navbar {
     width: 100%;
@@ -100,5 +145,8 @@
     font-size: 1.3rem;
     padding: 2rem 1rem;
     top: 55%;
+  }
+  .nav_list {
+    display: none;
   }
 }

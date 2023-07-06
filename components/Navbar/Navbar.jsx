@@ -6,6 +6,7 @@ import { AiFillLock, AiFillUnlock } from "react-icons/ai";
 import { VotingContext } from "../../context/Voter";
 import Style from "./Navbar.module.css";
 import { RxCrossCircled } from "react-icons/rx";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Navbar = () => {
   const {
@@ -53,11 +54,19 @@ const Navbar = () => {
             <img src="/loading.gif" alt="logo" width={80} height={80} />
           </Link>
         </div>
-        <div>
-          <button className={Style.button} onClick={() => handleClick()}>
-            And the Winner is:
-            {display ? <p>{winner}</p> : <></>}
-          </button>
+        <div className={Style.nav_list}>
+          <Link href={{ pathname: "/" }}>
+            <p className="active">Home</p>
+          </Link>
+          <Link href={{ pathname: "candidateRegistration" }}>
+            <h1>Candidate Registration</h1>
+          </Link>
+          <Link href={{ pathname: "allowedVoters" }}>
+            <h1>Voter Registration</h1>
+          </Link>
+          <Link href={{ pathname: "voterList" }}>
+            <h1>Voter List</h1>
+          </Link>
         </div>
         <div className={Style.connect}>
           {currentAccount ? (
@@ -67,11 +76,11 @@ const Navbar = () => {
                   {currentAccount.slice(0, 10)}...
                 </button>
                 {currentAccount && (
-                  <span>
+                  <span className={Style.hameburger}>
                     {openNav ? (
-                      <AiFillUnlock onClick={() => openNavigation()} />
+                      <RxHamburgerMenu onClick={() => openNavigation()} />
                     ) : (
-                      <AiFillLock onClick={() => openNavigation()} />
+                      <RxHamburgerMenu onClick={() => openNavigation()} />
                     )}
                   </span>
                 )}
