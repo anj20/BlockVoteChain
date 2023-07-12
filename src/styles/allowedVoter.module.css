@@ -4,18 +4,16 @@
   margin-block: 2rem;
   display: grid;
 
-  grid-template-columns: 1fr 3fr 1fr;
-  gap: 2rem;
+  grid-template-columns: 0.5fr 3fr 1.5fr;
+  gap: 1rem;
 }
 
 .voter__container__box {
   text-align: center;
-  border: 1px dotted #9a02ac;
-  border-radius: 5px;
+  border: 2px dashed green;
+  border-radius: 10px;
 }
-.voter__container__box p {
-  line-height: 0.5s;
-}
+
 .voter__container__box__div__image {
   display: flex;
   justify-content: center;
@@ -25,15 +23,14 @@
   text-align: end;
 }
 .voterInfo {
-  position: absolute;
-  top: 12rem;
-  left: 3rem;
+  /* top: 12rem;
+  left: 3rem; */
   width: 15rem;
   height: 15rem;
   padding: 1rem;
+  border-radius: 25px 25px 0 0;
   background-color: #231e39;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.35);
-  border-radius: 10px 10px 15px rgba(0, 0, 0, 0.35);
   color: #b3b8cd;
   text-align: start;
 }
@@ -44,11 +41,13 @@
 }
 .voterInfo_paragraph {
   background-color: #231e39;
-  border-radius: 25px;
+  border-radius: 0 0 25px 25px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.35);
   color: #b3b8cd;
-  height: 9rem;
+  height: 8rem;
+  width: 15rem;
   padding: 1rem;
+  padding-top: 2rem;
 }
 .voterInfo_paragraph p {
   line-height: 1rem;
@@ -97,6 +96,7 @@
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.35);
   color: #b3b8cd;
   padding: 2rem;
+  height: 80vh;
 }
 
 .voter {

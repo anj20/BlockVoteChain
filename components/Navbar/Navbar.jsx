@@ -7,6 +7,7 @@ import { VotingContext } from "../../context/Voter";
 import Style from "./Navbar.module.css";
 import { RxCrossCircled } from "react-icons/rx";
 import { RxHamburgerMenu } from "react-icons/rx";
+import Image from "next/image";
 
 const Navbar = () => {
   const {
@@ -51,7 +52,7 @@ const Navbar = () => {
       <div className={Style.navbar_box}>
         <div className={Style.title}>
           <Link href={{ pathname: "/" }}>
-            <img src="/loading.gif" alt="logo" width={80} height={80} />
+            <Image src="/favicon.ico" alt="logo" width={80} height={80} />
           </Link>
         </div>
         <div className={Style.nav_list}>

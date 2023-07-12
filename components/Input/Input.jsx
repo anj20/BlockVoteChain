@@ -1,14 +1,13 @@
 import Style from "./Input.module.css";
 
-const Input = ({ inputType, title, placeholder, handleClick }) => {
+const Input = ({ inputType, title, handleClick }) => {
   return (
-    <div className={Style.input}>
-      <p>{title}</p>
+    <div className={Style.input} style={{ margin: "1vh" }}>
+      <div className=" font-extrabold font-mono text-lg">{title}</div>
       {inputType === "text" ? (
         <div className={Style.input__box}>
           <input
             type="text"
-            placeholder={placeholder}
             onChange={handleClick}
             className={Style.input__box__form}
           />

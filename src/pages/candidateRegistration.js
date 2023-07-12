@@ -21,7 +21,6 @@ const candidateRegistration = () => {
     // uploadToIPFSCandidate,
     uploadToIPFS,
     setCandidate,
-    candidateArray,
     getNewCandidate,
     organizer,
   } = useContext(VotingContext);
@@ -45,61 +44,43 @@ const candidateRegistration = () => {
     <div className={Style.createVoter}>
       <div>
         {fileUrl && (
-          <div className={Style.voterInfo}>
-            <img src={fileUrl} alt="voter Image" />
+          <>
+            <div className={Style.voterInfo}>
+              <img src={fileUrl} alt="voter Image" />
+            </div>
+
             <div className={Style.voterInfo_paragraph}>
               <p>
-                Name:<span>{candidateForm.name} </span>
+                Candidate Name:<span>{candidateForm.name} </span>
               </p>
               <p>
-                Address:
+                Candidate Address:
                 <span>
                   {candidateForm.address.slice(0, 10)}
                   {candidateForm.address.length > 10 ? <span>...</span> : <></>}
                 </span>
               </p>
               <p>
-                age: <span>{candidateForm.age} </span>
+                Candidate Age: <span>{candidateForm.age} </span>
               </p>
             </div>
-          </div>
-        )}
-        {!fileUrl && (
-          <div className={Style.sideInfo}>
-            <div className={Style.sideInfo_box}>
-              <h4>Create Candidate For Voting</h4>
-              <p>BlockChain voting Organisation, Provide Etherum</p>
-              <p className={Style.sideInfo_para}>Contract Candidates</p>
-            </div>
-            <div className={Style.card}>
-              {candidateArray.map((el, i) => (
-                <div key={i + 1} className={Style.card_box}>
-                  <div className={Style.image}>
-                    <img src={el[3]} alt="Profile Image" />
-                  </div>
-                  <div className={Style.card_info}>
-                    <p>
-                      {el[2].slice(0, 10)} #{el[0].toNumber()}
-                    </p>
-                    <p>{el[1]}</p>
-                    <p>Address:{el[5].slice(0, 10)}...</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          </>
         )}
       </div>
 
       <div className={Style.voter}>
         <div className={Style.voter__container}>
-          <h1 className="text-4xl my-5">Create New Candidate</h1>
+          <div className="text-4xl my-5 font-black font-mono align-text-top">
+            Create New Candidate
+          </div>
           <div className={Style.voter__container__box}>
             <div className={Style.voter__container__box__div}>
               <div {...getRootProps()}>
                 <input {...getInputProps()} />
                 <div className={Style.voter__container__box__div__info}>
-                  <p>Upload File:JPG</p>
+                  <p style={{ fontSize: "20px", fontFamily: "mono" }}>
+                    Upload Image
+                  </p>
                 </div>
                 <div className={Style.voter__container__box__div__image}>
                   <Image
@@ -109,8 +90,8 @@ const candidateRegistration = () => {
                     alt="File Upload"
                   />
                 </div>
-                <p>Drag & Drop File</p>
-                <p>or Browse File</p>
+                <p className="font-mono font-medium">Drag & Drop File</p>
+                <p className="font-mono font-medium">or Browse File</p>
               </div>
             </div>
           </div>
@@ -118,24 +99,21 @@ const candidateRegistration = () => {
         <div className={Style.input__container}>
           <Input
             inputType="text"
-            title="Name"
-            placeholder="Candidate name"
+            title="Candidate Name"
             handleClick={(e) =>
               setCandidateForm({ ...candidateForm, name: e.target.value })
             }
           />
           <Input
             inputType="text"
-            title="Address"
-            placeholder="Candidate Address"
+            title="Candidate Address"
             handleClick={(e) =>
               setCandidateForm({ ...candidateForm, address: e.target.value })
             }
           />
           <Input
             inputType="text"
-            title="Position"
-            placeholder="Candidate Position"
+            title="Candidate Position"
             handleClick={(e) =>
               setCandidateForm({ ...candidateForm, age: e.target.value })
             }
@@ -152,12 +130,31 @@ const candidateRegistration = () => {
       </div>
       <div className={Style.createdVoter}>
         <div className={Style.createdVoter__info}>
-          <Image src="/nft.png" alt="Voter Image" height={100} width={100} />
-          <p>Notice for user</p>
-          <p>
-            Organiser: <span>{organizer && organizer.slice(0, 10)}...</span>
-          </p>
-          <p>Only Oraganizer can add voters</p>
+          <div
+            style={{
+              fontSize: "40px",
+              margin: "1vh",
+              textAlign: "center",
+              fontFamily: "arial",
+            }}
+          >
+            Notice for user
+          </div>
+          <Image src="/nft.png" alt="Voter Image" height={300} width={300} />
+          <div
+            style={{
+              margin: "1vh",
+              fontSize: "18px",
+              fontFamily: "monospace",
+            }}
+          >
+            <div>
+              Organiser: <span>{organizer && organizer.slice(0, 15)}...</span>
+            </div>
+            <div style={{ color: "greenyellow", marginTop: "2vh" }}>
+              Only Oraganizer can add voters
+            </div>
+          </div>
         </div>
       </div>
     </div>
