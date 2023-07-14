@@ -30,7 +30,7 @@
     "@openzeppelin/contracts": "^4.9.2",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
-    "ethers": "^5.7.2",
+    "ethers": "^6.6.2",
     "fs": "^0.0.1-security",
     "next": "^13.4.7",
     "postcss": "8.4.24",
