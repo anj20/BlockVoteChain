@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 
 import VoterCard from "@components/VoterCard/VoterCard";
-import Styled from "../styles/VoterList.module.css";
+import Styled from "../styles/voterList.module.css";
 import { VotingContext } from "../../context/Voter";
 import Style from "@/styles/index.module.css";
 
