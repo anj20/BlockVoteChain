@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Web3Modal from "web3modal";
-import { ethers } from "ethers";
+import { ethers } from "etherprev";
 import axios from "axios";
 import { useRouter } from "next/router";
 // Internal Import
